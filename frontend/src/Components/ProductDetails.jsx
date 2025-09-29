@@ -35,6 +35,7 @@ export const ProductDetails = () => {
         dispatch(asyncUpdateProduct(formData , params.id));
         navigate('/products');
     }
+    // 4AEE-3741
 
     const deleteHandler = () =>{
         dispatch(asyncDeleteProduct(params.id));
