@@ -14,7 +14,6 @@ export const RenderCard = ({curr}) => {
                 <h3> <span>{price}</span> </h3>
                 <p>Desc: <span className="text-zinc-400 text-sm">{description.slice(0, 50)}.. <small className="text-blue-500">more</small></span></p>
                 <p>Category : <span className="bg-green-500 px-1 py-0.5 rounded-lg text-sm">{category}</span></p>
-
             </div>
         </Link>
     </>)

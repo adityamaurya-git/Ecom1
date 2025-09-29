@@ -7,14 +7,10 @@ export const Navbar = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const user = useSelector((state) => {
+    const {data} = useSelector((state) => {
         return state.users
     });
-    console.log(user);
-    const logoutHandler = () => {
-        dispatch(asyncLogout());
-        navigate('/');
-    }
+
 
     return (<>
         <div className="w-full flex justify-center gap-4 p-3 bg-zinc-900 text-white">
@@ -22,17 +18,25 @@ export const Navbar = () => {
 
             <NavLink className={(e) => (e.isActive ? "text-blue-500" : "text-white")} to="/products">Products</NavLink>
 
-            <NavLink className={(e) => (e.isActive ? "text-blue-500" : "text-white")} to="/cart">Cart</NavLink>
+
+            {data ? (<>
+                <NavLink className={(e) => (e.isActive ? "text-blue-500" : "text-white")} to="/cart">Cart</NavLink>
+                {data && data?.isAdmin && 
+                <NavLink className={(e) => (e.isActive ? "text-blue-500" : "text-white")} to="admin/create-product">Create</NavLink>
+                }
+                <NavLink className={(e) => (e.isActive ? "text-blue-500" : "text-white")} to="admin/user-profile">Setting</NavLink>
+            </>) 
+            : (<>
+                <NavLink className={(e) => (e.isActive ? "text-blue-500" : "text-white")} to="/register">Register</NavLink>
+                <NavLink className={(e) => (e.isActive ? "text-blue-500" : "text-white")} to="/login">Login</NavLink>
+            </>)}
+                
+            
+            
 
 
 
-            <NavLink className={(e) => (e.isActive ? "text-blue-500" : "text-white")} to="/register">Register</NavLink>
 
-            <NavLink className={(e) => (e.isActive ? "text-blue-500" : "text-white")} to="/login">Login</NavLink>
-
-            <NavLink className={(e) => (e.isActive ? "text-blue-500" : "text-white")} to="admin/create-product">Create</NavLink>
-
-            <button onClick={logoutHandler} >Logout</button>
 
         </div>
     </>)

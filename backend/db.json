@@ -1,11 +1,20 @@
 {
   "users": [
     {
-      "id": "1",
-      "email": "admin@gmail.com",
+      "id": "G_y1lg3ZDJH9EIYqy86f-",
       "username": "master.admin",
+      "email": "admin@gmail.com",
       "password": "12345",
-      "isAdmin": true
+      "isAdmin": true,
+      "cart": []
+    },
+    {
+      "id": "LiwjIL1y3Dm-HI4eWJOAx",
+      "username": "Aditya@15",
+      "email": "aditya@gmail.com",
+      "password": "12345",
+      "isAdmin": false,
+      "cart": []
     }
   ],
   "products": [

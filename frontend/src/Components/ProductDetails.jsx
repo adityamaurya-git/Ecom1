@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom"
 import { asyncDeleteProduct, asyncUpdateProduct } from "../store/actions/productAction";
+import { asyncUpdateUser } from "../store/actions/userAction";
 
 export const ProductDetails = () => {
     const params = useParams();
@@ -35,11 +36,31 @@ export const ProductDetails = () => {
         dispatch(asyncUpdateProduct(formData , params.id));
         navigate('/products');
     }
-    // 4AEE-3741
 
     const deleteHandler = () =>{
         dispatch(asyncDeleteProduct(params.id));
         navigate('/products');
+    }
+
+    const addToCart = () =>{
+        const copyUser = {...user.data , cart: [...user.data.cart]};
+        const x = copyUser.cart.findIndex((c)=>{
+            return c?.product.id == product.id;
+        })
+
+        if(x == -1){
+            copyUser.cart.push({
+            product: product,
+            quantity: 1
+        })
+        }
+        else{
+            copyUser.cart[x] = {product: product , quantity : copyUser.cart[x].quantity + 1}
+            
+        }
+        
+
+        dispatch(asyncUpdateUser(copyUser , user.data.id));
     }
 
     return product ? (<>
@@ -58,10 +79,16 @@ export const ProductDetails = () => {
                     </div>
                 </div>
 
-                <div className="cardBottom flex flex-col gap-2 ">
-
-
+                <div className="cardBottom flex flex-col gap-5 ">
                     <p>Category : <span className="bg-green-500 px-1 py-0.5 rounded-lg text-sm">{product.category}</span></p>
+                    <div className="w-full flex gap-4 ">
+                        <button 
+                        className="px-2 py-1 rounded-lg bg-zinc-500"
+                        onClick={addToCart}
+                        >Add to Cart</button>
+
+                        <button className="px-2 py-1 rounded-lg bg-amber-400">Buy Now</button>
+                    </div>
 
                 </div>
             </div>

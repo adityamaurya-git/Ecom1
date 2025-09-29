@@ -23,7 +23,6 @@ export const asyncLoadProduct = () => async (dispatch , getState)=>{
     try{
         const res = await instance.get('/products');
         dispatch(loadProduct(res.data))
-        console.log(res);
     }catch(error){
         console.log(error);
     }

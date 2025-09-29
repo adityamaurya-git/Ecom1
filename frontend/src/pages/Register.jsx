@@ -13,6 +13,7 @@ export const Register = () =>{
     const registerHandler = (formData) =>{
         formData.id = nanoid();
         formData.isAdmin = false;
+        formData.cart = [];
         dispatch(asyncRegister(formData));
         reset();
         navigate('/login');
