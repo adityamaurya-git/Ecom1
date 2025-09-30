@@ -6,11 +6,7 @@ import { asyncCreateProduct } from "../../store/actions/productAction"
 
 export const CreateProduct = () =>{
 
-    const {register , reset , handleSubmit} = useForm({
-        // defaultValues:{
-        //     title:
-        // }
-    });
+    const {register , reset , handleSubmit} = useForm();
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -24,10 +20,10 @@ export const CreateProduct = () =>{
     return(<>
         <div className='w-full h-screen flex justify-center items-center'>
             <form 
-            className=' w-1/3 p-4 bg-zinc-900 flex flex-col gap-3 rounded-lg items-center'
+            className=' w-1/3 p-4 bg-[#F1E7C7] flex flex-col gap-3 rounded-lg items-center'
             onSubmit={handleSubmit(createProductHandler)}>
                 <input
-                    className='px-2 py-1 bg-zinc-800 w-full rounded-lg ' 
+                    className='px-2 py-1 bg-[#FDF8E8] w-full rounded-lg ' 
                     type="text"
                     {...register("title")}
                     placeholder='Enter Title'
@@ -35,7 +31,7 @@ export const CreateProduct = () =>{
                 />
 
                 <input
-                    className="px-2 py-1 bg-zinc-800 w-full rounded-lg"
+                    className="px-2 py-1 bg-[#FDF8E8] w-full rounded-lg"
                     type="number"
                     {...register("price")} 
                     placeholder="Enter Price"
@@ -43,13 +39,13 @@ export const CreateProduct = () =>{
                 />
 
                 <textarea
-                    className='px-2 py-1 bg-zinc-800 w-full rounded-lg resize-none' 
+                    className='px-2 py-1 bg-[#FDF8E8] w-full rounded-lg resize-none' 
                     {...register("description")}
                     placeholder='Enter Description'
                     autoComplete='off'
                  />
 
-                <select className="px-2 py-1 bg-zinc-800 w-full rounded-lg"
+                <select className="px-2 py-1 bg-[#FDF8E8] w-full rounded-lg"
                 {...register("category")}>
                     <option value="">--Select--</option>
                     <option value="men">Men Wear</option>
@@ -58,14 +54,14 @@ export const CreateProduct = () =>{
                 </select>
 
                 <input 
-                    className="px-2 py-1 bg-zinc-800 w-full rounded-lg "
+                    className="px-2 py-1 bg-[#FDF8E8] w-full rounded-lg "
                     type="url" 
                     {...register("image")}
                     placeholder="Image URL" 
                     autoComplete="off"/>
 
                 <input
-                    className='bg-blue-500 rounded-lg px-2 py-1 w-1/3 cursor-pointer'
+                    className='bg-white text-[#BD30B1] rounded-lg px-2 py-1 w-1/3 font-semibold cursor-pointer'
                     type="submit"
                     value="Create" 
                 />

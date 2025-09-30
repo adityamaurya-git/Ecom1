@@ -64,22 +64,22 @@ export const ProductDetails = () => {
     }
 
     return product ? (<>
-        <div className="w-full h-full flex justify-around">
-            <div className=" flex flex-col gap-3 w-1/3 bg-zinc-900 text-white p-3 ">
+        <div className="w-full h-screen flex justify-around">
+            <div className=" flex flex-col gap-3 w-1/3 h-[80%] bg-[#F1E7C7] text-black p-3 rounded-lg">
 
-                <div className="cardTop border-b-1 w-full flex justify-center h-[55%]">
+                <div className="cardTop border-b-1 w-full flex justify-center h-[70%]">
 
                     <div className="w-[50%] h-full">
                         <img className="w-full h-full object-cover" src={product.image} />
                     </div>
                     <div className="w-[50%] flex flex-col gap-2 p-2">
-                        <h1 className="font-black" >{product.title}</h1>
+                        <h1 className="font-bold text-md" >{product.title}</h1>
                         <h3> <span>{product.price}</span> </h3>
                         <p>Desc: <span className=" text-sm">{product.description}</span></p>
                     </div>
                 </div>
 
-                <div className="cardBottom flex flex-col gap-5 ">
+                <div className="cardBottom flex flex-col gap-5 h-[30%] ">
                     <p>Category : <span className="bg-green-500 px-1 py-0.5 rounded-lg text-sm">{product.category}</span></p>
                     <div className="w-full flex gap-4 ">
                         <button 
@@ -95,10 +95,10 @@ export const ProductDetails = () => {
             {user.data && user?.data.isAdmin &&
                 <div className='w-1/3  flex justify-center items-center'>
                 <form
-                    className=' w-full p-4 bg-zinc-900 flex flex-col gap-4 rounded-lg items-center'
+                    className=' w-full p-4 bg-[#F1E7C7] flex flex-col gap-4 rounded-lg items-center'
                     onSubmit={handleSubmit(updateProductHandler)}>
                     <input
-                        className='px-2 py-1 bg-zinc-800 w-full rounded-lg '
+                        className='px-2 py-1 bg-[#FDF8E8] w-full rounded-lg '
                         type="text"
                         {...register("title")}
                         placeholder='Enter Title'
@@ -106,7 +106,7 @@ export const ProductDetails = () => {
                     />
 
                     <input
-                        className="px-2 py-1 bg-zinc-800 w-full rounded-lg"
+                        className="px-2 py-1 bg-[#FDF8E8] w-full rounded-lg"
                         type="number"
                         {...register("price")}
                         placeholder="Enter Price"
@@ -114,13 +114,13 @@ export const ProductDetails = () => {
                     />
 
                     <textarea
-                        className='px-2 py-1 bg-zinc-800 w-full rounded-lg resize-none'
+                        className='px-2 py-1 bg-[#FDF8E8] w-full rounded-lg resize-none'
                         {...register("description")}
                         placeholder='Enter Description'
                         autoComplete='off'
                     />
 
-                    <select className="px-2 py-1 bg-zinc-800 w-full rounded-lg"
+                    <select className="px-2 py-1 bg-[#FDF8E8] w-full rounded-lg"
                         {...register("category")}>
                         <option value="">--Select--</option>
                         <option value="men">Men Wear</option>
@@ -129,7 +129,7 @@ export const ProductDetails = () => {
                     </select>
 
                     <input
-                        className="px-2 py-1 bg-zinc-800 w-full rounded-lg "
+                        className="px-2 py-1 bg-[#FDF8E8] w-full rounded-lg "
                         type="url"
                         {...register("image")}
                         placeholder="Image URL"
@@ -137,12 +137,12 @@ export const ProductDetails = () => {
 
                     <div className="w-full flex gap-4 justify-center">
                         <input
-                            className='bg-blue-500 rounded-lg px-2 py-1 w-1/3 cursor-pointer'
+                            className='bg-white text-[#BD30B1] font-semibold rounded-lg px-2 py-1 w-1/3 cursor-pointer'
                             type="submit"
                             value="Update"
                         />
                         <input
-                            className="bg-red-500 rounded-lg px-2 py-1 w-1/3 cursor-pointer"
+                            className="bg-white text-[#BD30B1] font-semibold rounded-lg px-2 py-1 w-1/3 cursor-pointer"
                             onClick={deleteHandler}
                             type="submit"
                             value="Delete"

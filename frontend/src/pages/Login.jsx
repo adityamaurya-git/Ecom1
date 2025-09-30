@@ -18,10 +18,10 @@ export const Login = () => {
     return (<>
         <div className='w-full h-screen flex justify-center items-center'>
             <form 
-            className=' w-1/3 p-4 bg-zinc-900 flex flex-col gap-3 rounded-lg items-center'
+            className=' w-1/3 p-4 bg-[#F1E7C7] flex flex-col gap-3 rounded-lg items-center'
             onSubmit={handleSubmit(loginHandler)}>
                 <input
-                    className='px-2 py-1 bg-zinc-800 w-full rounded-lg ' 
+                    className='px-2 py-1 bg-[#FDF8E8] w-full rounded-lg ' 
                     type="email"
                     {...register("email")}
                     placeholder='Enter Email'
@@ -29,7 +29,7 @@ export const Login = () => {
                 />
 
                 <input
-                    className='px-2 py-1 bg-zinc-800 w-full rounded-lg ' 
+                    className='px-2 py-1 bg-[#FDF8E8] w-full rounded-lg ' 
                     type="password"
                     {...register("password")}
                     placeholder='Enter Password'
@@ -37,11 +37,11 @@ export const Login = () => {
                  />
 
                 <input
-                    className='bg-blue-500 rounded-lg px-2 py-1 w-1/3 cursor-pointer'
+                    className='bg-white font-semibold text-[#BD30B1] rounded-lg px-2 py-1 w-1/3 cursor-pointer'
                     type="submit"
                     value="Login" 
                 />
-                <p>Don't have an account ? <Link className='text-blue-500' to='/register'  >Register</Link></p>
+                <p>Don't have an account ? <Link className='text-[#BD30B1]' to='/register'  >Register</Link></p>
             </form>
         </div>
     </>)

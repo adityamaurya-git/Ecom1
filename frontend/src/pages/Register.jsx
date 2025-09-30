@@ -22,10 +22,10 @@ export const Register = () =>{
     return(<>
         <div className='w-full h-screen flex justify-center items-center'>
             <form 
-            className=' w-1/3 p-4 bg-zinc-900 flex flex-col gap-3 rounded-lg items-center'
+            className=' w-1/3 p-4 bg-[#F1E7C7] flex flex-col gap-3 rounded-lg items-center'
             onSubmit={handleSubmit(registerHandler)}>
                 <input
-                    className='px-2 py-1 bg-zinc-800 w-full rounded-lg ' 
+                    className='px-2 py-1 bg-[#FDF8E8] w-full rounded-lg ' 
                     type="text"
                     {...register("username")}
                     placeholder='Enter Username'
@@ -33,7 +33,7 @@ export const Register = () =>{
                 />
 
                 <input
-                    className="px-2 py-1 bg-zinc-800 w-full rounded-lg"
+                    className="px-2 py-1 bg-[#FDF8E8] w-full rounded-lg"
                     type="email"
                     {...register("email")} 
                     placeholder="Enter Email"
@@ -41,7 +41,7 @@ export const Register = () =>{
                 />
 
                 <input
-                    className='px-2 py-1 bg-zinc-800 w-full rounded-lg ' 
+                    className='px-2 py-1 bg-[#FDF8E8] w-full rounded-lg ' 
                     type="password"
                     {...register("password")}
                     placeholder='Enter Password'
@@ -49,11 +49,11 @@ export const Register = () =>{
                  />
 
                 <input
-                    className='bg-blue-500 rounded-lg px-2 py-1 w-1/3 cursor-pointer'
+                    className='bg-white text-[#BD30B1] font-semibold rounded-lg px-2 py-1 w-1/3 cursor-pointer'
                     type="submit"
                     value="Register" 
                 />
-                <p>Already have an account ? <Link className='text-green-500' to='/login'  >Login</Link></p>
+                <p>Already have an account ? <Link className='text-[#BD30B1]' to='/login'  >Login</Link></p>
 
             </form>
         </div>

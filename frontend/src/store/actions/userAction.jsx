@@ -32,6 +32,7 @@ export const asyncLogin = (user) => async (dispatch , getState) =>{
         const res = await instance.get(`/users?email=${user.email}&password=${user.password}`);
         
         localStorage.setItem("user" , JSON.stringify(res.data[0]));
+        dispatch(asyncCurrentUser());
     }catch(error){
         console.log(error);
     }

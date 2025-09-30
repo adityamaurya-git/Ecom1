@@ -35,13 +35,13 @@ export const ProfileUser = () => {
     }
 
     return (<>
-        <div className="w-full flex justify-center items-center h-full">
+        <div className="w-full flex justify-center items-center h-screen">
             <form
-                className=' w-1/3 p-4 bg-zinc-900 flex flex-col gap-3 rounded-lg items-center'
+                className=' w-1/3 p-4 bg-[#F1E7C7] flex flex-col gap-3 rounded-lg items-center'
                 onSubmit={handleSubmit(updateHandler)}
             >
                 <input
-                    className='px-2 py-1 bg-zinc-800 w-full rounded-lg '
+                    className='px-2 py-1 bg-[#FDF8E8] w-full rounded-lg '
                     type="text"
                     {...register("username")}
                     placeholder='Enter Username'
@@ -49,7 +49,7 @@ export const ProfileUser = () => {
                 />
 
                 <input
-                    className="px-2 py-1 bg-zinc-800 w-full rounded-lg"
+                    className="px-2 py-1 bg-[#FDF8E8] w-full rounded-lg"
                     type="email"
                     {...register("email")}
                     placeholder="Enter Email"
@@ -57,7 +57,7 @@ export const ProfileUser = () => {
                 />
 
                 <input
-                    className='px-2 py-1 bg-zinc-800 w-full rounded-lg '
+                    className='px-2 py-1 bg-[#FDF8E8] w-full rounded-lg '
                     type="password"
                     {...register("password")}
                     placeholder='Enter Password'
@@ -66,18 +66,18 @@ export const ProfileUser = () => {
 
                 <div className="w-full flex gap-2 justify-center">
                     <input
-                        className='bg-blue-500 rounded-lg px-2 py-1 w-1/3 cursor-pointer'
+                        className='bg-white text-[#BD30B1] font-semibold rounded-lg px-2 py-1 w-1/3 cursor-pointer'
                         type="button"
                         value="Logout"
                         onClick={logoutHandler}
                     />
                     <input
-                        className='bg-green-500 rounded-lg px-2 py-1 w-1/3 cursor-pointer'
+                        className='bg-white text-[#BD30B1] font-semibold rounded-lg px-2 py-1 w-1/3 cursor-pointer'
                         type="submit"
                         value="Update"
                     />
                     <input
-                        className='bg-red-500 rounded-lg px-2 py-1 w-1/3 cursor-pointer'
+                        className='bg-white text-[#BD30B1] font-semibold rounded-lg px-2 py-1 w-1/3 cursor-pointer'
                         type="button"
                         value="Delete"
                         onClick={deleteHandler}
